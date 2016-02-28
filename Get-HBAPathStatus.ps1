@@ -1,4 +1,5 @@
-﻿$VMHosts = get-cluster (Get-content C:\temp\cluster.txt) | Get-VMHost | ? { $_.ConnectionState -eq “Connected” } | Sort-Object -Property Name
+﻿#add input files
+$VMHosts = get-cluster (Get-content C:\temp\cluster.txt) | Get-VMHost | ? { $_.ConnectionState -eq “Connected” } | Sort-Object -Property Name
 $allresults= @()
 $datastore = @()
 foreach ($VMHost in $VMHosts) {
